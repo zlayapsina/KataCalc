@@ -27,14 +27,14 @@ class Converter {
     }
 
     public String arabicToRoman(int number) {
-        String roman = "";
+        StringBuilder roman = new StringBuilder();
         int arabianKey;
         do {
             arabianKey = arabianMap.floorKey(number);
-            roman += arabianMap.get(arabianKey);
+            roman.append(arabianMap.get(arabianKey));
             number -= arabianKey;
         } while (number != 0);
-        return roman;
+        return roman.toString();
     }
 
     public int romanToArabic(String romanString) {
